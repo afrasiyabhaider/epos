@@ -231,7 +231,7 @@
 <div class="row">
 	<div class="col-xs-12">
 		<br/><br/>
-		<table class="table table-responsive">
+		<table class="table table-responsive" style="font-weight:bold;font-size:16px;">
 			<thead>
 				<tr>
 					<th><?php echo e($receipt_details->table_product_label, false); ?></th>
@@ -293,7 +293,7 @@
 
 	<div class="col-xs-6">
 
-		<table class="table table-condensed">
+		<table class="table table-condensed" style="font-weight:bold;font-size:16px;">
 
 			<?php if(!empty($receipt_details->payments)): ?>
 				<?php $__currentLoopData = $receipt_details->payments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $payment): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -353,7 +353,7 @@
 
 	<div class="col-xs-6">
         <div class="table-responsive">
-          	<table class="table">
+          	<table class="table" style="font-weight:bold;font-size:16px;">
 				<tbody>
 					<tr>
 						<th style="width:70%">

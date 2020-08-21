@@ -202,7 +202,7 @@
 <div class="row">
 	<div class="col-xs-12">
 		<br/><br/>
-		<table class="table table-responsive">
+		<table class="table table-responsive" style="font-weight:bold;font-size:16px;">
 			<thead>
 				<tr>
 					<th>{{$receipt_details->table_product_label}}</th>
@@ -264,7 +264,7 @@
 
 	<div class="col-xs-6">
 
-		<table class="table table-condensed">
+		<table class="table table-condensed" style="font-weight:bold;font-size:16px;">
 
 			@if(!empty($receipt_details->payments))
 				@foreach($receipt_details->payments as $payment)
@@ -317,7 +317,7 @@
 
 	<div class="col-xs-6">
         <div class="table-responsive">
-          	<table class="table">
+          	<table class="table" style="font-weight:bold;font-size:16px;">
 				<tbody>
 					<tr>
 						<th style="width:70%">
