@@ -812,3 +812,4 @@
 #76 G:\\Wamps\\wamp64\\www\\arcocia_projects\\web_development\\epos\\server.php(21): require_once('G:\\\\Wamps\\\\wamp64...')
 #77 {main}
 "} 
+[2020-08-21 23:47:32] live.EMERGENCY: File:G:\Wamps\wamp64\www\arcocia_projects\web_development\epos\app\Utils\ProductUtil.phpLine:512Message:Trying to get property 'product_type' of non-object  

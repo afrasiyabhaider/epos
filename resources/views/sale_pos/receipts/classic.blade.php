@@ -121,6 +121,7 @@
 					<br/>
 					<b>{{ $receipt_details->customer_label }}</b> {{ $receipt_details->customer_name }} <br>
 				@endif
+				{{-- 
 				@if(!empty($receipt_details->customer_info))
 					{!! $receipt_details->customer_info !!}
 				@endif
@@ -142,7 +143,7 @@
 				@if(!empty($receipt_details->customer_rp_label))
 					<br/>
 					<strong>{{ $receipt_details->customer_rp_label }}</strong> {{ $receipt_details->customer_total_rp }}
-				@endif
+				@endif --}}
 			</span>
 
 			<span class="pull-right text-left">
@@ -202,7 +203,7 @@
 <div class="row">
 	<div class="col-xs-12">
 		<br/><br/>
-		<table class="table table-responsive" style="font-weight:bold;font-size:16px;">
+		<table class="table table-responsive" style="font-weight:bold;font-size:16px;font-family: Arial !important">
 			<thead>
 				<tr>
 					<th>{{$receipt_details->table_product_label}}</th>
@@ -264,7 +265,7 @@
 
 	<div class="col-xs-6">
 
-		<table class="table table-condensed" style="font-weight:bold;font-size:16px;">
+		<table class="table table-condensed" style="font-weight:bold;font-size:16px;font-family: Arial !important">
 
 			@if(!empty($receipt_details->payments))
 				@foreach($receipt_details->payments as $payment)
@@ -317,15 +318,12 @@
 
 	<div class="col-xs-6">
         <div class="table-responsive">
-          	<table class="table" style="font-weight:bold;font-size:16px;">
+          	<table class="table" style="font-weight:bold;font-size:16px;font-family: Arial !important">
 				<tbody>
 					<tr>
 						<th style="width:70%">
 							{!! $receipt_details->subtotal_label !!}
 						</th>
-						<td>
-							{{$receipt_details->subtotal}}
-						</td>
 					</tr>
 					
 					<!-- Shipping Charges -->
@@ -334,9 +332,6 @@
 							<th style="width:70%">
 								{!! $receipt_details->shipping_charges_label !!}
 							</th>
-							<td>
-								{{$receipt_details->shipping_charges}}
-							</td>
 						</tr>
 					@endif
 
@@ -374,6 +369,9 @@
 							<td>
 								(+) {{$receipt_details->tax}}
 							</td>
+							<td>
+								{{$receipt_details->subtotal}}
+							</td>
 						</tr>
 					@endif
 
@@ -384,6 +382,9 @@
 						</th>
 						<td>
 							{{$receipt_details->total}}
+						</td>
+						<td>
+							{{$receipt_details->shipping_charges}}
 						</td>
 					</tr>
 				</tbody>

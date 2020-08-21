@@ -139,34 +139,7 @@
 					<br/>
 					<b><?php echo e($receipt_details->customer_label, false); ?></b> <?php echo e($receipt_details->customer_name, false); ?> <br>
 				<?php endif; ?>
-				<?php if(!empty($receipt_details->customer_info)): ?>
-					<?php echo $receipt_details->customer_info; ?>
-
-				<?php endif; ?>
-				<?php if(!empty($receipt_details->client_id_label)): ?>
-					<br/>
-					<b><?php echo e($receipt_details->client_id_label, false); ?></b> <?php echo e($receipt_details->client_id, false); ?>
-
-				<?php endif; ?>
-				<?php if(!empty($receipt_details->customer_tax_label)): ?>
-					<br/>
-					<b><?php echo e($receipt_details->customer_tax_label, false); ?></b> <?php echo e($receipt_details->customer_tax_number, false); ?>
-
-				<?php endif; ?>
-				<?php if(!empty($receipt_details->customer_custom_fields)): ?>
-					<br/><?php echo $receipt_details->customer_custom_fields; ?>
-
-				<?php endif; ?>
-				<?php if(!empty($receipt_details->sales_person_label)): ?>
-					<br/>
-					<b><?php echo e($receipt_details->sales_person_label, false); ?></b> <?php echo e($receipt_details->sales_person, false); ?>
-
-				<?php endif; ?>
-				<?php if(!empty($receipt_details->customer_rp_label)): ?>
-					<br/>
-					<strong><?php echo e($receipt_details->customer_rp_label, false); ?></strong> <?php echo e($receipt_details->customer_total_rp, false); ?>
-
-				<?php endif; ?>
+				
 			</span>
 
 			<span class="pull-right text-left">
@@ -231,7 +204,7 @@
 <div class="row">
 	<div class="col-xs-12">
 		<br/><br/>
-		<table class="table table-responsive" style="font-weight:bold;font-size:16px;">
+		<table class="table table-responsive" style="font-weight:bold;font-size:16px;font-family: Arial !important">
 			<thead>
 				<tr>
 					<th><?php echo e($receipt_details->table_product_label, false); ?></th>
@@ -293,7 +266,7 @@
 
 	<div class="col-xs-6">
 
-		<table class="table table-condensed" style="font-weight:bold;font-size:16px;">
+		<table class="table table-condensed" style="font-weight:bold;font-size:16px;font-family: Arial !important">
 
 			<?php if(!empty($receipt_details->payments)): ?>
 				<?php $__currentLoopData = $receipt_details->payments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $payment): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -353,7 +326,7 @@
 
 	<div class="col-xs-6">
         <div class="table-responsive">
-          	<table class="table" style="font-weight:bold;font-size:16px;">
+          	<table class="table" style="font-weight:bold;font-size:16px;font-family: Arial !important">
 				<tbody>
 					<tr>
 						<th style="width:70%">
