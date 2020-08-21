@@ -338,6 +338,10 @@ Route::get('migrate-fresh', function () {
     \Artisan::call('migrate:fresh');
     dd("Migration Freshed");
 });
+Route::get('optimize-clear', function () {
+    \Artisan::call('optimize:clear');
+    dd("Optimized");
+});
 
 Route::middleware(['EcomApi'])->prefix('api/ecom')->group(function () {
     Route::get('products/{id?}', 'ProductController@getProductsApi');
