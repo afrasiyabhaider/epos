@@ -3,7 +3,7 @@
 @endphp
 <style>
 	*{
-		font-family: Arial;
+		font-family: Arial,'Times New Roman',serif;
 	}
 </style>
 <table style="width:100%;">

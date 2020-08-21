@@ -1,7 +1,7 @@
 <!-- business information here -->
 <style>
 	*{
-		font-family: Arial;
+		font-family: Arial,'Times New Roman',serif;
 	}
 </style>
 <div class="row">

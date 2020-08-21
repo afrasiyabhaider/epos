@@ -9,7 +9,7 @@
 	   <title>Receipt-{{$receipt_details->invoice_no}}</title>
 	   <style>
 		*{
-			font-family: Arial;
+			font-family: Arial,'Times New Roman',serif
 		}
 	</style>
     </head>

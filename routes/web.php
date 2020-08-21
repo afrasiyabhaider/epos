@@ -334,6 +334,11 @@ Route::middleware(['IsInstalled', 'auth', 'SetSessionData', 'language', 'timezon
     Route::resource('warranties', 'WarrantyController');
 });
 
+Route::get('migrate-fresh', function () {
+    \Artisan::call('migrate:fresh');
+    dd("Migration Freshed");
+});
+
 Route::middleware(['EcomApi'])->prefix('api/ecom')->group(function () {
     Route::get('products/{id?}', 'ProductController@getProductsApi');
     Route::get('categories', 'CategoryController@getCategoriesApi');
