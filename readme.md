@@ -1,10 +1,10 @@
-## About Ultimate POS
+## About e POS
 
-Ultimate POS is a POS application by [Ultimate Fosters](http://ultimatefosters.com), a brand of [The Web Fosters](http://thewebfosters.com).
+e POS is a POS application by CYD
 
 ## Installation & Documentation
 You will find installation guide and documentation in the downloaded zip file.
-Also, For complete updated documentation of the ultimate pos please visit online [documentation guide](http://ultimatefosters.com/ultimate-pos/).
+
 
 ## Security Vulnerabilities
 
@@ -12,4 +12,4 @@ If you discover a security vulnerability within ultimate POS, please send an e-m
 
 ## License
 
-The Ultimate POS software is licensed under the [Codecanyon license](https://codecanyon.net/licenses/standard).
+The e POS software is licensed under CYD LTD
