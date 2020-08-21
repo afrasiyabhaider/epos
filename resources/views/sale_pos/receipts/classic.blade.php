@@ -202,7 +202,6 @@
 
 <div class="row">
 	<div class="col-xs-12">
-		<br/><br/>
 		<table class="table table-responsive" style="font-weight:bold;font-size:16px;font-family: Arial !important">
 			<thead>
 				<tr>
