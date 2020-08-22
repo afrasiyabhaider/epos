@@ -284,7 +284,7 @@
         @endif
       </p>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-6 hide">
       <strong>@lang('purchase.additional_notes'):</strong><br>
       <p class="well well-sm no-shadow bg-gray">
         @if($purchase->additional_notes)
@@ -297,8 +297,8 @@
   </div>
 
   {{-- Barcode --}}
-  <div class="row print_section">
-    <div class="col-xs-12">
+  <div class="row print_section hide">
+    <div class="col-xs-12 hide">
       <img class="center-block" src="data:image/png;base64,{{DNS1D::getBarcodePNG($purchase->ref_no, 'C128', 2,30,array(39, 48, 54), true)}}">
     </div>
   </div>

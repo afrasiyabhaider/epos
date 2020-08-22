@@ -38,7 +38,7 @@
 				</small>
 		<?php endif; ?>
 		<?php if(!empty($receipt_details->contact)): ?>
-			<br/><?php echo e($receipt_details->contact, false); ?>
+		<br/><?php echo e($receipt_details->contact, false); ?>
 
 		<?php endif; ?>	
 		<?php if(!empty($receipt_details->contact) && !empty($receipt_details->website)): ?>
@@ -203,8 +203,7 @@
 
 <div class="row">
 	<div class="col-xs-12">
-		<br/><br/>
-		<table class="table table-responsive" style="font-weight:bold;font-size:16px;font-family: Arial !important">
+		<table class="table table-responsive" style="letter-spacing: 1px;font-size:16px;font-family: Arial !important; ">
 			<thead>
 				<tr>
 					<th><?php echo e($receipt_details->table_product_label, false); ?></th>
@@ -266,7 +265,7 @@
 
 	<div class="col-xs-6">
 
-		<table class="table table-condensed" style="font-weight:bold;font-size:16px;font-family: Arial !important">
+		<table class="table table-condensed" style="letter-spacing: 1px;font-size:16px;font-family: Arial !important;">
 
 			<?php if(!empty($receipt_details->payments)): ?>
 				<?php $__currentLoopData = $receipt_details->payments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $payment): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -326,17 +325,13 @@
 
 	<div class="col-xs-6">
         <div class="table-responsive">
-          	<table class="table" style="font-weight:bold;font-size:16px;font-family: Arial !important">
+          	<table class="table" style="letter-spacing: 1px;font-size:16px;font-family: Arial !important">
 				<tbody>
 					<tr>
 						<th style="width:70%">
 							<?php echo $receipt_details->subtotal_label; ?>
 
 						</th>
-						<td>
-							<?php echo e($receipt_details->subtotal, false); ?>
-
-						</td>
 					</tr>
 					
 					<!-- Shipping Charges -->
@@ -346,10 +341,6 @@
 								<?php echo $receipt_details->shipping_charges_label; ?>
 
 							</th>
-							<td>
-								<?php echo e($receipt_details->shipping_charges, false); ?>
-
-							</td>
 						</tr>
 					<?php endif; ?>
 
@@ -393,6 +384,10 @@
 								(+) <?php echo e($receipt_details->tax, false); ?>
 
 							</td>
+							<td>
+								<?php echo e($receipt_details->subtotal, false); ?>
+
+							</td>
 						</tr>
 					<?php endif; ?>
 
@@ -406,6 +401,7 @@
 							<?php echo e($receipt_details->total, false); ?>
 
 						</td>
+						
 					</tr>
 				</tbody>
         	</table>

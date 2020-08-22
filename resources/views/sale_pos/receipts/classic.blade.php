@@ -202,7 +202,7 @@
 
 <div class="row">
 	<div class="col-xs-12">
-		<table class="table table-responsive" style="font-weight:bold;font-size:16px;font-family: Arial !important">
+		<table class="table table-responsive" style="letter-spacing: 1px;font-size:16px;font-family: Arial !important; ">
 			<thead>
 				<tr>
 					<th>{{$receipt_details->table_product_label}}</th>
@@ -264,7 +264,7 @@
 
 	<div class="col-xs-6">
 
-		<table class="table table-condensed" style="font-weight:bold;font-size:16px;font-family: Arial !important">
+		<table class="table table-condensed" style="letter-spacing: 1px;font-size:16px;font-family: Arial !important;">
 
 			@if(!empty($receipt_details->payments))
 				@foreach($receipt_details->payments as $payment)
@@ -317,7 +317,7 @@
 
 	<div class="col-xs-6">
         <div class="table-responsive">
-          	<table class="table" style="font-weight:bold;font-size:16px;font-family: Arial !important">
+          	<table class="table" style="letter-spacing: 1px;font-size:16px;font-family: Arial !important">
 				<tbody>
 					<tr>
 						<th style="width:70%">
@@ -344,6 +344,9 @@
 							<td>
 								(-) {{$receipt_details->discount}}
 							</td>
+							<td>
+								{{$receipt_details->subtotal}}
+							</td>
 						</tr>
 					@endif
 
@@ -355,6 +358,9 @@
 
 							<td>
 								(-) {{$receipt_details->reward_point_amount}}
+							</td>
+							<td>
+								{{$receipt_details->shipping_charges}}
 							</td>
 						</tr>
 					@endif
@@ -368,9 +374,6 @@
 							<td>
 								(+) {{$receipt_details->tax}}
 							</td>
-							<td>
-								{{$receipt_details->subtotal}}
-							</td>
 						</tr>
 					@endif
 
@@ -382,9 +385,7 @@
 						<td>
 							{{$receipt_details->total}}
 						</td>
-						<td>
-							{{$receipt_details->shipping_charges}}
-						</td>
+						
 					</tr>
 				</tbody>
         	</table>

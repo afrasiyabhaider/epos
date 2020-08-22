@@ -534,7 +534,7 @@
 {{-- Barcode --}}
 @if($receipt_details->show_barcode)
 <br>
-<div class="row">
+<div class="row hide">
 		<div class="col-xs-12">
 			<img class="center-block" src="data:image/png;base64,{{DNS1D::getBarcodePNG($receipt_details->invoice_no, 'C128', 2,30,array(39, 48, 54), true)}}">
 		</div>
