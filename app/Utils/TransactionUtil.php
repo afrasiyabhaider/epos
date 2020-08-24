@@ -37,6 +37,10 @@ class TransactionUtil extends Util
      */
     public function createSellTransaction($business_id, $input, $invoice_total, $user_id, $uf_data = true)
     {
+        $is_credit = 0;
+        if(isset($input['is_credit_sale']) && $input['is_credit_sale'] == '1'){
+            $is_credit = 1;
+        }
         $invoice_scheme_id = !empty($input['invoice_scheme_id']) ? $input['invoice_scheme_id'] : null;
         $invoice_no = !empty($input['invoice_no']) ? $input['invoice_no'] : $this->getInvoiceNumber($business_id, $input['status'], $input['location_id'], $invoice_scheme_id);
 
@@ -50,6 +54,7 @@ class TransactionUtil extends Util
             'customer_group_id' => $input['customer_group_id'],
             'invoice_no' => $invoice_no,
             'ref_no' => '',
+            'is_credit' => $is_credit,
             'total_before_tax' => $invoice_total['total_before_tax'],
             'transaction_date' => $input['transaction_date'],
             'tax_id' => !empty($input['tax_rate_id']) ? $input['tax_rate_id'] : null,
@@ -192,6 +197,7 @@ class TransactionUtil extends Util
      */
     public function createOrUpdateSellLines($transaction, $products, $location_id, $return_deleted = false, $status_before = null, $extra_line_parameters = [], $uf_data = true)
     {
+        // dd($products);
         $lines_formatted = [];
         $modifiers_array = [];
         $edit_ids = [0];
@@ -317,6 +323,7 @@ class TransactionUtil extends Util
         if (!is_object($transaction)) {
             $transaction = Transaction::findOrFail($transaction);
         }
+        // dd($transaction);
 
         //Delete the products removed and increment product stock.
         $deleted_lines = [];
@@ -375,6 +382,8 @@ class TransactionUtil extends Util
         if ($return_deleted) {
             return $deleted_lines;
         }
+
+        // dd($transaction);
         return true;
     }
 
@@ -2223,8 +2232,13 @@ class TransactionUtil extends Util
     public function updatePaymentStatus($transaction_id, $final_amount = null)
     {
         $status = $this->calculatePaymentStatus($transaction_id, $final_amount);
-        Transaction::where('id', $transaction_id)
+        if($status == 'due'){
+            Transaction::where('id', $transaction_id)
+                ->update(['payment_status' => $status,'is_credit' => 1]);
+        }else{
+            Transaction::where('id', $transaction_id)
             ->update(['payment_status' => $status]);
+        }
 
         return $status;
     }

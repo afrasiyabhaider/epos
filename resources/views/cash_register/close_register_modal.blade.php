@@ -44,6 +44,14 @@
             </tr>
             <tr>
               <td>
+                Credit Sale Payment:
+              </td>
+              <td>
+                <span class="display_currency" data-currency_symbol="true">{{ $details['paid_credit_sales']->credit_paid }}</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
                 @lang('cash_register.bank_transfer'):
               </td>
               <td>

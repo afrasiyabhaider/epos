@@ -314,6 +314,16 @@ class CashRegisterUtil extends Util
                     DB::raw('SUM(final_total) as total_sales')
                 )
                 ->first();
+        $paid_credit_sales = Transaction::where('transactions.created_by', $user_id)
+                ->whereBetween('transaction_date', [$open_time, $close_time])
+                ->where('transactions.type', 'sell')
+                ->where('transactions.status', 'final')
+                ->where('transactions.payment_status', 'paid')
+                ->where('transactions.is_credit', 1)
+                ->select(
+                    DB::raw('SUM(final_total) as credit_paid')
+                )
+                ->first();
         $expense_details = Transaction::where('transactions.created_by', $user_id)
                 ->whereBetween('transaction_date', [$open_time, $close_time])
                 ->where('transactions.type', 'expense')
@@ -347,7 +357,8 @@ class CashRegisterUtil extends Util
                 'types_of_service_details' => $types_of_service_details,
                 'expense_details' => $expense_details,
                 'deposits' => $deposits,
-                'withdrawals' => $withdrawals
+                'withdrawals' => $withdrawals,
+                'paid_credit_sales' => $paid_credit_sales
             ];
     }
 

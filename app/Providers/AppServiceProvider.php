@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Observers\CheckCreditSale;
+use App\Observers\TransactionObserver;
+use App\Transaction;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Schema;
@@ -128,6 +131,8 @@ class AppServiceProvider extends ServiceProvider
         });
 
         $this->registerCommands();
+
+        Transaction::observe(TransactionObserver::class);
     }
 
     /**

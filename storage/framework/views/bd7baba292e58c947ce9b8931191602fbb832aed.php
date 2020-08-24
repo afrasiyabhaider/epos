@@ -356,6 +356,10 @@
 								(-) <?php echo e($receipt_details->discount, false); ?>
 
 							</td>
+							<td>
+								<?php echo e($receipt_details->subtotal, false); ?>
+
+							</td>
 						</tr>
 					<?php endif; ?>
 
@@ -370,6 +374,10 @@
 								(-) <?php echo e($receipt_details->reward_point_amount, false); ?>
 
 							</td>
+							<td>
+								<?php echo e($receipt_details->shipping_charges, false); ?>
+
+							</td>
 						</tr>
 					<?php endif; ?>
 
@@ -382,10 +390,6 @@
 							</th>
 							<td>
 								(+) <?php echo e($receipt_details->tax, false); ?>
-
-							</td>
-							<td>
-								<?php echo e($receipt_details->subtotal, false); ?>
 
 							</td>
 						</tr>

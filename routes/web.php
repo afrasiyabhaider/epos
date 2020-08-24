@@ -338,6 +338,10 @@ Route::get('migrate-fresh', function () {
     \Artisan::call('migrate:fresh');
     dd("Migration Freshed");
 });
+Route::get('migrate', function () {
+    \Artisan::call('migrate');
+    dd("Migration Runned Successfully");
+});
 Route::get('optimize-clear', function () {
     \Artisan::call('optimize:clear');
     dd("Optimized");

@@ -44,6 +44,14 @@
             </tr>
             <tr>
               <td>
+                Credit Sale Payment:
+              </td>
+              <td>
+                <span class="display_currency" data-currency_symbol="true">{{ $details['paid_credit_sales']->credit_paid }}</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
                 @lang('expense.expenses'):
               </td>
               <td>
@@ -74,7 +82,7 @@
                 <span class="display_currency" data-currency_symbol="true">{{ $register_details->total_bank_transfer }}</span>
               </td>
             </tr>
-            @if(array_key_exists('custom_pay_1', $payment_types))
+            {{-- @if(array_key_exists('custom_pay_1', $payment_types))
               <tr>
                 <td>
                   {{$payment_types['custom_pay_1']}}:
@@ -103,7 +111,7 @@
                   <span class="display_currency" data-currency_symbol="true">{{ $register_details->total_custom_pay_3 }}</span>
                 </td>
               </tr>
-            @endif
+            @endif --}}
             <tr>
               <td>
                 @lang('cash_register.other_payments'):

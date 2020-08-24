@@ -103,6 +103,7 @@ class CashRegisterController extends Controller
         $user_id = $register_details->user_id;
         $open_time = $register_details['open_time'];
         $close_time = \Carbon::now()->toDateTimeString();
+        // dd($register_details);
         $details = $this->cashRegisterUtil->getRegisterTransactionDetails($user_id, $open_time, $close_time);
 
         $payment_types = $this->cashRegisterUtil->payment_types();

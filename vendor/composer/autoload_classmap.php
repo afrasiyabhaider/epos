@@ -16,6 +16,7 @@ return array(
     'AddChangeReturnLabelColumnToInvoiceLayoutsTable' => $baseDir . '/database/migrations/2019_12_06_174904_add_change_return_label_column_to_invoice_layouts_table.php',
     'AddChangesForSrNumberInProductsAndSaleLinesTable' => $baseDir . '/database/migrations/2018_03_29_115502_add_changes_for_sr_number_in_products_and_sale_lines_table.php',
     'AddChangesToInvoiceLayoutsTable' => $baseDir . '/database/migrations/2018_04_03_122709_add_changes_to_invoice_layouts_table.php',
+    'AddColumnIsCreditInTransactions' => $baseDir . '/database/migrations/2020_08_23_171947_add_column_is_credit_in_transactions.php',
     'AddColumnsForVariableProductModifications' => $baseDir . '/database/migrations/2018_10_22_114441_add_columns_for_variable_product_modifications.php',
     'AddCommissionAgentToTransactionsTable' => $baseDir . '/database/migrations/2018_02_26_134500_add_commission_agent_to_transactions_table.php',
     'AddCommonSettingsColumnToBusinessTable' => $baseDir . '/database/migrations/2019_10_22_163335_add_common_settings_column_to_business_table.php',
