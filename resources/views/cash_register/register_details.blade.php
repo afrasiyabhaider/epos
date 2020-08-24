@@ -159,7 +159,7 @@
                 @lang('lang_v1.total_payment')
               </th>
               <td>
-                <b><span class="display_currency" data-currency_symbol="true">{{ $register_details->cash_in_hand + $register_details->total_cash - $register_details->total_cash_refund + $details['deposits']->total_deposits - $details['expense_details']->total_expenses - $details['withdrawals']->total_withdrawals }}</span></b>
+                <b><span class="display_currency" data-currency_symbol="true">{{ $register_details->cash_in_hand + $register_details->total_cash - $register_details->total_cash_refund + $details['deposits']->total_deposits - $details['expense_details']->total_expenses - $details['withdrawals']->total_withdrawals+$details['paid_credit_sales']->credit_paid }}</span></b>
               </td>
             </tr>
             <tr class="success">
@@ -175,7 +175,7 @@
                 @lang('cash_register.total_sales'):
               </th>
               <td>
-                <b><span class="display_currency" data-currency_symbol="true">{{ $details['transaction_details']->total_sales + $details['deposits']->total_deposits - $details['expense_details']->total_expenses - $details['withdrawals']->total_withdrawals  }}</span></b>
+                <b><span class="display_currency" data-currency_symbol="true">{{ $details['transaction_details']->total_sales + $details['deposits']->total_deposits - $details['expense_details']->total_expenses - $details['withdrawals']->total_withdrawals + $details['paid_credit_sales']->credit_paid  }}</span></b>
               </td>
             </tr>
           </table>

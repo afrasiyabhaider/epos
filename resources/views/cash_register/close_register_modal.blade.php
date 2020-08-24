@@ -101,7 +101,7 @@
                 @lang('cash_register.total_sales'):
               </td>
               <td>
-                <span class="display_currency" data-currency_symbol="true">{{ $register_details->total_sale }}</span>
+                <span class="display_currency" data-currency_symbol="true">{{ $register_details->total_sale + $details['paid_credit_sales']->credit_paid }}</span>
               </td>
             </tr>
             <tr class="success">
@@ -143,7 +143,7 @@
                 @lang('lang_v1.total_payment')
               </th>
               <td>
-                <b><span class="display_currency" data-currency_symbol="true">{{ $register_details->cash_in_hand + $register_details->total_cash - $register_details->total_cash_refund }}</span></b>
+                <b><span class="display_currency" data-currency_symbol="true">{{ $register_details->cash_in_hand + $register_details->total_cash - $register_details->total_cash_refund + $details['paid_credit_sales']->credit_paid }}</span></b>
               </td>
             </tr>
             <tr class="success">
@@ -159,7 +159,7 @@
                 @lang('cash_register.total_sales'):
               </th>
               <td>
-                <b><span class="display_currency" data-currency_symbol="true">{{ $details['transaction_details']->total_sales }}</span></b>
+                <b><span class="display_currency" data-currency_symbol="true">{{ $details['transaction_details']->total_sales + $details['paid_credit_sales']->credit_paid}}</span></b>
               </td>
             </tr>
           </table>
@@ -172,7 +172,7 @@
         <div class="col-sm-4">
           <div class="form-group">
             {!! Form::label('closing_amount', __( 'cash_register.total_cash' ) . ':*') !!}
-              {!! Form::text('closing_amount', @num_format($register_details->cash_in_hand + $register_details->total_cash - $register_details->total_cash_refund), ['class' => 'form-control input_number', 'required', 'placeholder' => __( 'cash_register.total_cash' ) ]); !!}
+              {!! Form::text('closing_amount', @num_format($register_details->cash_in_hand + $register_details->total_cash - $register_details->total_cash_refund+$details['paid_credit_sales']->credit_paid), ['class' => 'form-control input_number', 'required', 'placeholder' => __( 'cash_register.total_cash' ) ]); !!}
           </div>
         </div>
         <div class="col-sm-4">

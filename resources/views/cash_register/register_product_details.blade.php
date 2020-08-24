@@ -40,7 +40,7 @@
 
       
       @php
-        $total_amount += ($details['transaction_details']->total_tax - $details['transaction_details']->total_discount);
+        $total_amount += ($details['transaction_details']->total_tax - $details['transaction_details']->total_discount + $details['paid_credit_sales']->credit_paid);
       @endphp
 
       <!-- Final details -->

@@ -102,7 +102,7 @@
                 <?php echo app('translator')->getFromJson('cash_register.total_sales'); ?>:
               </td>
               <td>
-                <span class="display_currency" data-currency_symbol="true"><?php echo e($register_details->total_sale, false); ?></span>
+                <span class="display_currency" data-currency_symbol="true"><?php echo e($register_details->total_sale + $details['paid_credit_sales']->credit_paid, false); ?></span>
               </td>
             </tr>
             <tr class="success">
@@ -144,7 +144,7 @@
                 <?php echo app('translator')->getFromJson('lang_v1.total_payment'); ?>
               </th>
               <td>
-                <b><span class="display_currency" data-currency_symbol="true"><?php echo e($register_details->cash_in_hand + $register_details->total_cash - $register_details->total_cash_refund, false); ?></span></b>
+                <b><span class="display_currency" data-currency_symbol="true"><?php echo e($register_details->cash_in_hand + $register_details->total_cash - $register_details->total_cash_refund + $details['paid_credit_sales']->credit_paid, false); ?></span></b>
               </td>
             </tr>
             <tr class="success">
@@ -160,7 +160,7 @@
                 <?php echo app('translator')->getFromJson('cash_register.total_sales'); ?>:
               </th>
               <td>
-                <b><span class="display_currency" data-currency_symbol="true"><?php echo e($details['transaction_details']->total_sales, false); ?></span></b>
+                <b><span class="display_currency" data-currency_symbol="true"><?php echo e($details['transaction_details']->total_sales + $details['paid_credit_sales']->credit_paid, false); ?></span></b>
               </td>
             </tr>
           </table>
@@ -174,7 +174,7 @@
           <div class="form-group">
             <?php echo Form::label('closing_amount', __( 'cash_register.total_cash' ) . ':*'); ?>
 
-              <?php echo Form::text('closing_amount', number_format($register_details->cash_in_hand + $register_details->total_cash - $register_details->total_cash_refund, config('constants.currency_precision', 2), session('currency')['decimal_separator'], session('currency')['thousand_separator']), ['class' => 'form-control input_number', 'required', 'placeholder' => __( 'cash_register.total_cash' ) ]);; ?>
+              <?php echo Form::text('closing_amount', number_format($register_details->cash_in_hand + $register_details->total_cash - $register_details->total_cash_refund+$details['paid_credit_sales']->credit_paid, config('constants.currency_precision', 2), session('currency')['decimal_separator'], session('currency')['thousand_separator']), ['class' => 'form-control input_number', 'required', 'placeholder' => __( 'cash_register.total_cash' ) ]);; ?>
 
           </div>
         </div>

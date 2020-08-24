@@ -130,7 +130,7 @@
                 <?php echo app('translator')->getFromJson('lang_v1.total_payment'); ?>
               </th>
               <td>
-                <b><span class="display_currency" data-currency_symbol="true"><?php echo e($register_details->cash_in_hand + $register_details->total_cash - $register_details->total_cash_refund + $details['deposits']->total_deposits - $details['expense_details']->total_expenses - $details['withdrawals']->total_withdrawals, false); ?></span></b>
+                <b><span class="display_currency" data-currency_symbol="true"><?php echo e($register_details->cash_in_hand + $register_details->total_cash - $register_details->total_cash_refund + $details['deposits']->total_deposits - $details['expense_details']->total_expenses - $details['withdrawals']->total_withdrawals+$details['paid_credit_sales']->credit_paid, false); ?></span></b>
               </td>
             </tr>
             <tr class="success">
@@ -146,7 +146,7 @@
                 <?php echo app('translator')->getFromJson('cash_register.total_sales'); ?>:
               </th>
               <td>
-                <b><span class="display_currency" data-currency_symbol="true"><?php echo e($details['transaction_details']->total_sales + $details['deposits']->total_deposits - $details['expense_details']->total_expenses - $details['withdrawals']->total_withdrawals, false); ?></span></b>
+                <b><span class="display_currency" data-currency_symbol="true"><?php echo e($details['transaction_details']->total_sales + $details['deposits']->total_deposits - $details['expense_details']->total_expenses - $details['withdrawals']->total_withdrawals + $details['paid_credit_sales']->credit_paid, false); ?></span></b>
               </td>
             </tr>
           </table>
