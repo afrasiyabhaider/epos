@@ -139,7 +139,7 @@ class SellPosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    { 
         if (!auth()->user()->can('sell.create')) {
             abort(403, 'Unauthorized action.');
         }

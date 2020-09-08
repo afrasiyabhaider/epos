@@ -191,6 +191,12 @@ Route::middleware(['IsInstalled', 'auth', 'SetSessionData', 'language', 'timezon
         Route::get('settings', 'LocationSettingsController@index')->name('settings');
         Route::post('settings', 'LocationSettingsController@updateSettings')->name('settings_update');
     });
+    
+    Route::get('payment_voucher/create','PaymentVoucherController@create');
+    Route::post('payment_voucher/','PaymentVoucherController@store');
+    Route::get('payment_voucher/','PaymentVoucherController@index');
+    Route::get('payment_voucher/{id}/slip','PaymentVoucherController@print_slip')->name('voucher.printInvoice');
+
 
     //Business Locations...
     Route::post('business-location/check-location-id', 'BusinessLocationController@checkLocationId');

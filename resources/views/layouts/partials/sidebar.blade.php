@@ -186,7 +186,7 @@
           @includeIf('manufacturing::layouts.partials.sidebar')
         @endif
         @if(auth()->user()->can('purchase.view') || auth()->user()->can('purchase.create') || auth()->user()->can('purchase.update') )
-        <li class="treeview {{in_array($request->segment(1), ['purchases', 'purchase-return']) ? 'active active-sub' : '' }}" id="tour_step6">
+        <li class="treeview {{in_array($request->segment(1), ['purchases', 'purchase-return','payment_voucher']) ? 'active active-sub' : '' }}" id="tour_step6">
           <a href="#" id="tour_step6_menu"><i class="fa fa-arrow-circle-down"></i> <span>@lang('purchase.purchases')</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -200,7 +200,17 @@
               <li class="{{ $request->segment(1) == 'purchases' && $request->segment(2) == 'create' ? 'active' : '' }}"><a href="{{action('PurchaseController@create')}}"><i class="fa fa-plus-circle"></i> @lang('purchase.add_purchase')</a></li>
             @endcan
             @can('purchase.update')
-              <li class="{{ $request->segment(1) == 'purchase-return' ? 'active' : '' }}"><a href="{{action('PurchaseReturnController@index')}}"><i class="fa fa-undo"></i> @lang('lang_v1.list_purchase_return')</a></li>
+            <li class="{{ $request->segment(1) == 'purchase-return' ? 'active' : '' }}"><a href="{{action('PurchaseReturnController@index')}}"><i class="fa fa-undo"></i> @lang('lang_v1.list_purchase_return')</a></li>
+            @endcan
+            @can('purchase.create')
+              <li class="{{ $request->segment(1) == 'payment_voucher' && $request->segment(2) == 'create' ? 'active' : '' }}"><a href="{{action('PaymentVoucherController@create')}}"><i class="fa fa-dollar"></i>
+                Add Payment Voucher
+              </a></li>
+            @endcan
+            @can('purchase.create')
+              <li class="{{ $request->segment(1) == 'payment_voucher' && $request->segment(2) == '' ? 'active' : '' }}"><a href="{{action('PaymentVoucherController@index')}}"><i class="fa fa-money"></i>
+                Payment Vouchers
+              </a></li>
             @endcan
           </ul>
         </li>

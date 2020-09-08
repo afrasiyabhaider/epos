@@ -491,7 +491,6 @@ class SellController extends Controller
         if (!auth()->user()->can('direct_sell.access')) {
             abort(403, 'Unauthorized action.');
         }
-
         $business_id = request()->session()->get('user.business_id');
 
         //Check if subscribed or not, then check for users quota

@@ -186,7 +186,7 @@
           <?php if ($__env->exists('manufacturing::layouts.partials.sidebar')) echo $__env->make('manufacturing::layouts.partials.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
         <?php endif; ?>
         <?php if(auth()->user()->can('purchase.view') || auth()->user()->can('purchase.create') || auth()->user()->can('purchase.update') ): ?>
-        <li class="treeview <?php echo e(in_array($request->segment(1), ['purchases', 'purchase-return']) ? 'active active-sub' : '', false); ?>" id="tour_step6">
+        <li class="treeview <?php echo e(in_array($request->segment(1), ['purchases', 'purchase-return','payment_voucher']) ? 'active active-sub' : '', false); ?>" id="tour_step6">
           <a href="#" id="tour_step6_menu"><i class="fa fa-arrow-circle-down"></i> <span><?php echo app('translator')->getFromJson('purchase.purchases'); ?></span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -200,7 +200,17 @@
               <li class="<?php echo e($request->segment(1) == 'purchases' && $request->segment(2) == 'create' ? 'active' : '', false); ?>"><a href="<?php echo e(action('PurchaseController@create'), false); ?>"><i class="fa fa-plus-circle"></i> <?php echo app('translator')->getFromJson('purchase.add_purchase'); ?></a></li>
             <?php endif; ?>
             <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('purchase.update')): ?>
-              <li class="<?php echo e($request->segment(1) == 'purchase-return' ? 'active' : '', false); ?>"><a href="<?php echo e(action('PurchaseReturnController@index'), false); ?>"><i class="fa fa-undo"></i> <?php echo app('translator')->getFromJson('lang_v1.list_purchase_return'); ?></a></li>
+            <li class="<?php echo e($request->segment(1) == 'purchase-return' ? 'active' : '', false); ?>"><a href="<?php echo e(action('PurchaseReturnController@index'), false); ?>"><i class="fa fa-undo"></i> <?php echo app('translator')->getFromJson('lang_v1.list_purchase_return'); ?></a></li>
+            <?php endif; ?>
+            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('purchase.create')): ?>
+              <li class="<?php echo e($request->segment(1) == 'payment_voucher' && $request->segment(2) == 'create' ? 'active' : '', false); ?>"><a href="<?php echo e(action('PaymentVoucherController@create'), false); ?>"><i class="fa fa-dollar"></i>
+                Add Payment Voucher
+              </a></li>
+            <?php endif; ?>
+            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('purchase.create')): ?>
+              <li class="<?php echo e($request->segment(1) == 'payment_voucher' && $request->segment(2) == '' ? 'active' : '', false); ?>"><a href="<?php echo e(action('PaymentVoucherController@index'), false); ?>"><i class="fa fa-money"></i>
+                Payment Vouchers
+              </a></li>
             <?php endif; ?>
           </ul>
         </li>
