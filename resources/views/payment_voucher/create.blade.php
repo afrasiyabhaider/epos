@@ -23,7 +23,17 @@
           @component('components.widget', ['class' => 'box-primary'])
                <form action="{{action('PaymentVoucherController@store')}}" method="post" id="payment_voucher">
                     @csrf
-                    <div class="col-sm-12">
+                    <div class="form-row">
+                         <div class="col-sm-6">
+                              <label>Payee Name</label>
+                              <input type="text" name="payee_name" placeholder="Enter Payee Name" class="form-control" required>
+                         </div>
+                         <div class="col-sm-6">
+                              <label>Account Number</label>
+                              <input type="text" name="ac_number" placeholder="Enter Account Number" class="form-control" required>
+                         </div>
+                    </div>
+                    <div class="col-sm-12" style="margin-top: 40px">
                          <button class="btn btn-success" style="float: right;" id="plus" type="button">Add</button>
                     </div>
                     <div id="dynamic_form">

@@ -19,6 +19,8 @@
                                    <tr>
                                         <th>Action</th>
                                         <th>No of Items</th>
+                                        <th>Payee Name</th>
+                                        <th>Account Number</th>
                                         <th>Voucher Number</th>
                                         <th>Prepared by</th>
                                         <th>Amount</th>
@@ -51,13 +53,14 @@
           payment_voucher_table = $('#payment_voucher_table').DataTable({
                processing: true,
                serverSide: true,
-               aaSorting: [[1, 'desc']],
                "ajax": {
                     "url": "{{url('/payment_voucher')}}",
                },
                columns: [
                     { data: 'action', name: 'action', orderable: false, "searchable": false},
                     { data: 'no_of_items', name: 'no_of_items'},
+                    { data: 'payee_name', name: 'payee_name'},
+                    { data: 'ac_no', name: 'ac_no'},
                     { data: 'voucher_number', name: 'voucher_number'},
                     { data: 'user_id', name: 'user_id'},
                     { data: 'total_amount', name: 'total_amount'},

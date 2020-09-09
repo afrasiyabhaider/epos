@@ -12,6 +12,9 @@
                          <?php echo e($business_details['name'], false); ?>
 
                     </h2>
+                    <h3 class="text-center">
+                         Payment Voucher
+                    </h3>
 
                </td>
           </tr>
@@ -26,29 +29,29 @@
 
                          <div class="col-md-12 invoice-col width-100">
 
+                              <h4 class="text-center">
+                                   Ref No: <?php echo e($voucher->voucher_number, false); ?>
+
+                              </h4>
+                              <p class="text-center">
+                                   TIN: <?php echo e($business_details['tax_number_1'], false); ?>
+
+                              </p>
                               <!-- Date-->
-                              <h5 class="text-center">
+                              <p class="text-center">
                                    <span>
                                         Date: 
                                         <?php echo e(Carbon\Carbon::now()->format('d-M-Y H:i A'), false); ?>
 
                                    </span>
-                              </h5>
-                              <p class="text-right">
-                                   TIN: ...............
                               </p>
-                              <h4 class="text-center">
-                                   Ref No: <?php echo e($voucher->voucher_number, false); ?>
-
-                              </h4>
-                              <h3 class="text-center">
-                                   Payment Voucher
-                              </h3>
                               <h5 class="text-left">
-                                   Payee: ..........................................
+                                   Payee: <?php echo e($voucher->payee_name,'..............', false); ?>
+
                               </h5>
                               <h5 class="text-left">
-                                   A/C: ..........................................
+                                   A/C: <?php echo e($voucher->ac_no,'..............', false); ?>
+
                               </h5>
                          </div>
                     </div>
@@ -57,7 +60,7 @@
                     <div class="row color-555">
                          <div class="col-xs-12">
                               <br/>
-                              <table class="table table-bordered table-no-top-cell-border text-center">
+                              <table class="table table-bordered text-center">
                                    <thead>
                                         <tr>
                                              <th width="10%">

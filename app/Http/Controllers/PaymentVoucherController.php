@@ -123,7 +123,9 @@ class PaymentVoucherController extends Controller
     {
         $request->validate([
             'title.*' => 'required',
-            'amount.*' => 'required'
+            'amount.*' => 'required',
+            'ac_number'=> 'required',
+            'payee_name'=> 'required',
         ]);
         // dd($request->input());
         try {
@@ -136,6 +138,8 @@ class PaymentVoucherController extends Controller
             $voucher->user_id = Auth::id();
             $voucher->voucher_number = rand(1256, 11226699);
             $voucher->no_of_items = count($title);
+            $voucher->payee_name = $request->input('payee_name');
+            $voucher->ac_no = $request->input('ac_number');
             $voucher->save();
 
             for ($i = 0; $i < count($title); $i++) {
@@ -219,8 +223,9 @@ class PaymentVoucherController extends Controller
             ];
     
             $business_id = request()->session()->get('user.business_id');
-    
+            
             $business_details = $this->businessUtil->getDetails($business_id);
+            // dd($business_details);
             $currency_details = [
                 'symbol' => $business_details->currency_symbol,
                 'thousand_separator' => $business_details->thousand_separator,
