@@ -726,6 +726,7 @@ class ComposerStaticInit36d2a2f3bef1031fafd0f63397f81115
         'AddChangeReturnLabelColumnToInvoiceLayoutsTable' => __DIR__ . '/../..' . '/database/migrations/2019_12_06_174904_add_change_return_label_column_to_invoice_layouts_table.php',
         'AddChangesForSrNumberInProductsAndSaleLinesTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_29_115502_add_changes_for_sr_number_in_products_and_sale_lines_table.php',
         'AddChangesToInvoiceLayoutsTable' => __DIR__ . '/../..' . '/database/migrations/2018_04_03_122709_add_changes_to_invoice_layouts_table.php',
+        'AddCheckedByColumnInPaymentVouchers' => __DIR__ . '/../..' . '/database/migrations/2020_09_10_165816_add_checked_by_column_in_payment_vouchers.php',
         'AddColumnInPaymentVouchersTable' => __DIR__ . '/../..' . '/database/migrations/2020_09_09_134418_add_column_in_payment_vouchers_table.php',
         'AddColumnIsCreditInTransactions' => __DIR__ . '/../..' . '/database/migrations/2020_08_23_171947_add_column_is_credit_in_transactions.php',
         'AddColumnsForVariableProductModifications' => __DIR__ . '/../..' . '/database/migrations/2018_10_22_114441_add_columns_for_variable_product_modifications.php',

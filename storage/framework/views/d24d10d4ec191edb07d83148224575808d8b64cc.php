@@ -119,6 +119,8 @@
                               <br>
                               <b class="pull-left">Signatures</b>
                               <br>
+                              <b class="pull-left"><?php echo e($voucher->checked_by, false); ?></b>
+                              <br>
                               <br>
                               <b class="pull-left">___________________</b>
                          </div>

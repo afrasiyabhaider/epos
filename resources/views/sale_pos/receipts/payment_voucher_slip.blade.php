@@ -107,6 +107,8 @@
                               <br>
                               <b class="pull-left">Signatures</b>
                               <br>
+                              <b class="pull-left">{{$voucher->checked_by}}</b>
+                              <br>
                               <br>
                               <b class="pull-left">___________________</b>
                          </div>

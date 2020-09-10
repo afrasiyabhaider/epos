@@ -140,6 +140,7 @@ class PaymentVoucherController extends Controller
             $voucher->no_of_items = count($title);
             $voucher->payee_name = $request->input('payee_name');
             $voucher->ac_no = $request->input('ac_number');
+            $voucher->checked_by = $request->input('checked_by');
             $voucher->save();
 
             for ($i = 0; $i < count($title); $i++) {

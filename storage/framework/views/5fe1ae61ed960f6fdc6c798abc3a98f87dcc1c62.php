@@ -19,6 +19,7 @@
                                         <th>Action</th>
                                         <th>No of Items</th>
                                         <th>Payee Name</th>
+                                        <th>Checked By</th>
                                         <th>Account Number</th>
                                         <th>Voucher Number</th>
                                         <th>Prepared by</th>
@@ -59,6 +60,7 @@
                     { data: 'action', name: 'action', orderable: false, "searchable": false},
                     { data: 'no_of_items', name: 'no_of_items'},
                     { data: 'payee_name', name: 'payee_name'},
+                    { data: 'checked_by', name: 'checked_by'},
                     { data: 'ac_no', name: 'ac_no'},
                     { data: 'voucher_number', name: 'voucher_number'},
                     { data: 'user_id', name: 'user_id'},
@@ -70,7 +72,6 @@
           function printThis(id) {
                id = $(id).prop('id');
                url = '<?php echo e(url("/"), false); ?>';
-               console.log(url+'/payment_voucher/'+id+'/slip');
                $.ajax({
                     method: 'GET',
                     url: url+'/payment_voucher/'+id+'/slip',

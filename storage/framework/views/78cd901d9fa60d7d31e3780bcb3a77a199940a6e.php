@@ -32,6 +32,12 @@
                               <input type="text" name="ac_number" placeholder="Enter Account Number" class="form-control" required>
                          </div>
                     </div>
+                    <div class="form-row">
+                         <div class="col-sm-6">
+                              <label>Checked By</label>
+                              <input type="text" name="checked_by" placeholder="Enter Name of Checked By Person" class="form-control" required>
+                         </div>
+                    </div>
                     <div class="col-sm-12" style="margin-top: 40px">
                          <button class="btn btn-success" style="float: right;" id="plus" type="button">Add</button>
                     </div>
@@ -114,6 +120,9 @@
                               toastr.error(result.status.msg);
                          }
                     },
+                    error: function () {
+                         toastr.error("Please fill all fields with valid value");
+                    }
                });
           });
 
