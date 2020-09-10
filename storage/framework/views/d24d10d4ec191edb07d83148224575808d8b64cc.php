@@ -117,12 +117,15 @@
                               <b class="pull-left">Prepared By: <?php echo e(Auth::user()['first_name'], false); ?> <?php echo e(Auth::user()['last_name'], false); ?></b>
                               <br>
                               <br>
-                              <b class="pull-left">Signatures</b>
-                              <br>
-                              <b class="pull-left"><?php echo e($voucher->checked_by, false); ?></b>
-                              <br>
-                              <br>
                               <b class="pull-left">___________________</b>
+                              
+                         </div>
+                         <div class="col-md-6 invoice-col width-50">
+                              <b class="pull-right">Received By:<?php echo e($voucher->checked_by, false); ?></b>
+                              <br>
+                              <br>
+                              <b class="pull-right">___________________</b>
+                              <br>
                          </div>
                     </div>
 

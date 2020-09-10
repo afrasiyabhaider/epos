@@ -105,12 +105,15 @@
                               <b class="pull-left">Prepared By: {{Auth::user()['first_name']}} {{Auth::user()['last_name']}}</b>
                               <br>
                               <br>
-                              <b class="pull-left">Signatures</b>
-                              <br>
-                              <b class="pull-left">{{$voucher->checked_by}}</b>
-                              <br>
-                              <br>
                               <b class="pull-left">___________________</b>
+                              
+                         </div>
+                         <div class="col-md-6 invoice-col width-50">
+                              <b class="pull-right">Received By: {{$voucher->checked_by}}</b>
+                              <br>
+                              <br>
+                              <b class="pull-right">___________________</b>
+                              <br>
                          </div>
                     </div>
 
