@@ -5186,6 +5186,7 @@ return array(
     'Underscore\\Underscore' => $vendorDir . '/anahkiasen/underscore-php/src/Underscore.php',
     'Underscore\\UnderscoreTest' => $vendorDir . '/anahkiasen/underscore-php/tests/UnderscoreTest.php',
     'Underscore\\UnderscoreTestCase' => $vendorDir . '/anahkiasen/underscore-php/tests/UnderscoreTestCase.php',
+    'UpdateColumn' => $baseDir . '/database/migrations/2020_09_11_145707_update_column.php',
     'UpdateHelper\\ComposerPlugin' => $vendorDir . '/kylekatarnls/update-helper/src/UpdateHelper/ComposerPlugin.php',
     'UpdateHelper\\NotUpdateInterfaceInstanceException' => $vendorDir . '/kylekatarnls/update-helper/src/UpdateHelper/NotUpdateInterfaceInstanceException.php',
     'UpdateHelper\\UpdateHelper' => $vendorDir . '/kylekatarnls/update-helper/src/UpdateHelper/UpdateHelper.php',

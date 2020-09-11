@@ -109,10 +109,10 @@
                               
                          </div>
                          <div class="col-md-6 invoice-col width-50">
-                              <b class="pull-right">Received By: {{$voucher->checked_by}}</b>
+                              <b class="pull-left" style="margin-left: 10px">Received By: {{$voucher->checked_by}}</b>
                               <br>
                               <br>
-                              <b class="pull-right">___________________</b>
+                              <b class="pull-left">___________________</b>
                               <br>
                          </div>
                     </div>

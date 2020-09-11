@@ -130,7 +130,7 @@ class PaymentVoucherController extends Controller
         // dd($request->input());
         try {
             DB::beginTransaction();
-            $total_amount = 0;
+            $total_amount = 0.00;
             $title = $request->input('title');
             $amount = $request->input('amount');
 

@@ -121,10 +121,10 @@
                               
                          </div>
                          <div class="col-md-6 invoice-col width-50">
-                              <b class="pull-right">Received By:<?php echo e($voucher->checked_by, false); ?></b>
+                              <b class="pull-left" style="margin-left: 10px">Received By: <?php echo e($voucher->checked_by, false); ?></b>
                               <br>
                               <br>
-                              <b class="pull-right">___________________</b>
+                              <b class="pull-left">___________________</b>
                               <br>
                          </div>
                     </div>
