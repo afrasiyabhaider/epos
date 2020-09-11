@@ -78,7 +78,7 @@
                                                        {{$data->title}}
                                                   </td>
                                                   <td class="text-center">
-                                                       {{$data->amount}}
+                                                       {{$num = number_format($data->amount,2,$business_details['decimal_separator'],$business_details['thousand_separator'])}}
                                                        {{$business_details['currency_symbol']}}
                                                   </td>
                                              </tr>
@@ -89,7 +89,10 @@
                                                        Total
                                                   </th>
                                                   <th>
-                                                       {{$voucher->total_amount}}
+                                                       @php
+                                                           $num = number_format($voucher->total_amount,2,$business_details['decimal_separator'],$business_details['thousand_separator']);
+                                                       @endphp
+                                                       {{$num}}
                                                        {{$business_details['currency_symbol']}}
                                                   </th>
                                              </tr>

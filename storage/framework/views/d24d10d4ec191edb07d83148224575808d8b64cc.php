@@ -86,7 +86,7 @@
 
                                                   </td>
                                                   <td class="text-center">
-                                                       <?php echo e($data->amount, false); ?>
+                                                       <?php echo e($num = number_format($data->amount,2,$business_details['decimal_separator'],$business_details['thousand_separator']), false); ?>
 
                                                        <?php echo e($business_details['currency_symbol'], false); ?>
 
@@ -99,7 +99,10 @@
                                                        Total
                                                   </th>
                                                   <th>
-                                                       <?php echo e($voucher->total_amount, false); ?>
+                                                       <?php
+                                                           $num = number_format($voucher->total_amount,2,$business_details['decimal_separator'],$business_details['thousand_separator']);
+                                                       ?>
+                                                       <?php echo e($num, false); ?>
 
                                                        <?php echo e($business_details['currency_symbol'], false); ?>
 

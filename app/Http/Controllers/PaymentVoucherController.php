@@ -92,11 +92,12 @@ class PaymentVoucherController extends Controller
                     $business_id = request()->session()->get('user.business_id');
 
                     $business_details = $this->businessUtil->getDetails($business_id);
-                    return $row->total_amount . ' ' . $business_details['currency_symbol'];
+                    return '<span class="display_currency" data-currency_symbol="true">'.number_format($row->total_amount,2,$business_details['decimal_separator'],$business_details['thousand_separator']).'</span>' . ' ' . $business_details['currency_symbol'];
                 })
                 ->editColumn('created_at', function ($row) {
                     return Carbon::parse($row->created_at)->format('d-M-Y H:i A');
-                });
+                })
+                ->rawColumns(['total_amount','action']);
             return $datatable->make('true');
         }
 
