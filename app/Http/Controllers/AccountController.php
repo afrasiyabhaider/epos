@@ -233,7 +233,7 @@ class AccountController extends Controller
                             ->where('A.id', $id)
                             ->with(['transaction', 'transaction.contact', 'transfer_transaction'])
                             ->select(['type', 'amount', 'operation_date',
-                                'sub_type', 'transfer_transaction_id',
+                                'sub_type', 'note','transfer_transaction_id',
                                 DB::raw('(SELECT SUM(IF(AT.type="credit", AT.amount, -1 * AT.amount)) from account_transactions as AT WHERE AT.operation_date <= account_transactions.operation_date AND AT.account_id  =account_transactions.account_id AND AT.deleted_at IS NULL AND AT.id <= account_transactions.id) as balance'),
                                 'transaction_id',
                                 'account_transactions.id',
@@ -265,6 +265,9 @@ class AccountController extends Controller
                                     return '<span class="display_currency" data-currency_symbol="true">' . $row->amount . '</span>';
                                 }
                                 return '';
+                            })
+                            ->addColumn('note', function ($row) {
+                                return $row->note;
                             })
                             ->editColumn('balance', function ($row) {
                                 return '<span class="display_currency" data-currency_symbol="true">' . $row->balance . '</span>';

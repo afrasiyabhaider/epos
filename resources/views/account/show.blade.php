@@ -76,6 +76,7 @@
                                     <th>@lang( 'messages.date' )</th>
                                     <th>@lang( 'lang_v1.description' )</th>
                                     <th>@lang( 'lang_v1.added_by' )</th>
+                                    <th>Note</th>
                                     <th>@lang('account.debit')</th>
                     				<th>@lang('account.credit')</th>
                     				<th>@lang( 'lang_v1.balance' )</th>
@@ -141,6 +142,7 @@
                                 {data: 'operation_date', name: 'operation_date'},
                                 {data: 'sub_type', name: 'sub_type'},
                                 {data: 'added_by', name: 'added_by'},
+                                {data: 'note', name: 'note'},
                                 {data: 'debit', name: 'amount'},
                                 {data: 'credit', name: 'amount'},
                                 {data: 'balance', name: 'balance'},
